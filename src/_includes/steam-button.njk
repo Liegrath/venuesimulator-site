@@ -1,0 +1,5 @@
+{%- if site.steamUrl -%}
+<a class="btn btn-steam" href="{{ site.steamUrl }}" rel="noopener">Wishlist on Steam</a>
+{%- else -%}
+<span class="btn btn-steam is-soon" title="The Steam page is not live yet">Steam page soon</span>
+{%- endif -%}

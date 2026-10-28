@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: Devlog
+description: Notes from building Venue Simulator, a festival and venue management game.
+---
+<section class="wrap narrow">
+  <header class="page-head">
+    <h1>Devlog</h1>
+    <p class="lede">{{ description }}</p>
+  </header>
+  <ul class="post-list post-list-full">
+    {%- for post in collections.posts %}
+    <li>
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | niceDate }}</time>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>

@@ -1,0 +1,19 @@
+---
+layout: base.njk
+---
+<article class="wrap narrow post">
+  <a class="back" href="/blog/">← All devlog posts</a>
+  <header class="post-head">
+    <p class="meta"><time datetime="{{ page.date | isoDate }}">{{ page.date | niceDate }}</time></p>
+    <h1>{{ title }}</h1>
+    {% if description %}<p class="lede">{{ description }}</p>{% endif %}
+  </header>
+  {% if image %}<img class="post-cover" src="{{ image }}" alt="">{% endif %}
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+  <aside class="post-foot">
+    <p>Venue Simulator is still in development. Follow along here, or add it to your Steam wishlist once the page is up.</p>
+    {% include "steam-button.njk" %}
+  </aside>
+</article>

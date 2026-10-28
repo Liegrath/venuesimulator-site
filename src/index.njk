@@ -1,0 +1,83 @@
+---
+layout: base.njk
+---
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="kicker">Festival &amp; venue management · in development</p>
+      <h1>Start with an empty field and $5,000.</h1>
+      <p class="lede">{{ site.tagline }}</p>
+      <div class="actions">
+        {% include "steam-button.njk" %}
+        <a class="btn btn-ghost" href="/blog/">Read the devlog</a>
+      </div>
+    </div>
+    <figure class="hero-shot">
+      <img src="/assets/img/festival.jpg" width="1600" height="1304" alt="A night-time festival seen from above: thousands of visitors around three stages, rows of lit food stalls and toilets.">
+    </figure>
+  </div>
+</section>
+
+<section class="wrap pitch">
+  <div class="pitch-grid">
+    <div>
+      <h2>Build it</h2>
+      <p>Lay down a stage, bars, food stands and toilets. Run cables from generators, keep the power under the limit and leave room for the queues you know are coming.</p>
+    </div>
+    <div>
+      <h2>Book it</h2>
+      <p>Plan the night: pick a local act, set ticket prices and open the gates. Hard rock, heavy metal and electronic crowds all want different things.</p>
+    </div>
+    <div>
+      <h2>Survive it</h2>
+      <p>A fight by the stage. Someone faints at the front. The bar runs out of beer and the generator shorts out. Your radio does not stop, and every call is yours to answer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="shots">
+  <div class="wrap">
+    <h2 class="section-title">From the current build</h2>
+    <div class="shot-grid">
+      <figure class="shot shot-wide">
+        <img src="/assets/img/concert.jpg" loading="lazy" width="1600" height="856" alt="A small concert in progress: the crowd in front of a pallet stage, radio panel open with a fight and a fainting to deal with.">
+        <figcaption>Opening night on a pallet stage. Two calls on the radio already.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/img/report.jpg" loading="lazy" width="1600" height="856" alt="The event report window listing ticket and bar income, staff wages and incidents.">
+        <figcaption>Every show ends with a report card. This one lost $109.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/img/night.jpg" loading="lazy" width="1600" height="856" alt="A trailer stage, upgraded bar and food stand at night under warm lights.">
+        <figcaption>Upgrade the pallets to a trailer stage as your reputation grows.</figcaption>
+      </figure>
+    </div>
+    <p class="build-note">Early development screenshots. Some labels are still in Turkish; the game ships in English and Turkish.</p>
+  </div>
+</section>
+
+<section class="wrap latest">
+  <div class="latest-head">
+    <h2 class="section-title">Devlog</h2>
+    <a href="/blog/">All posts →</a>
+  </div>
+  <ul class="post-list">
+    {%- for post in collections.posts | head(3) %}
+    <li>
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | niceDate }}</time>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="wishlist">
+  <div class="wrap wishlist-in">
+    <div>
+      <h2>Coming to Steam</h2>
+      <p>Wishlisting is the single most helpful thing you can do for a small game.{% if not site.steamUrl %} The Steam page opens soon; this button will light up when it does.{% endif %}</p>
+    </div>
+    {% include "steam-button.njk" %}
+  </div>
+</section>
