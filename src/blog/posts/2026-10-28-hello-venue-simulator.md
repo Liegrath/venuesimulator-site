@@ -1,41 +1,47 @@
 ---
 title: Hello, Venue Simulator
-description: What this game is, where it stands today, and what this devlog will be about.
+description: My first game, what it's about, and why I'm writing about it here.
 image: /assets/img/festival.jpg
 ---
 
-Hi, I'm Enes. For the past few weeks I've been building **Venue Simulator**, a management game about running a music festival: from the first pallet stage on an empty field to a site with thousands of people, several stages and a radio that never goes quiet.
+Hi, I'm Enes. This is my first game. I've played management games my whole life, and a few weeks ago I finally stopped saying "someday" and started making one. It's called **Venue Simulator**, and it's about running a music festival.
 
-This devlog is where I'll share how it's going.
+I have no studio, no team and no idea how long this will take. What I do have is a very clear picture in my head of the game I want to play, so I'm going to write down how it goes here, good days and bad days.
 
 ## The idea
 
-Most management games are about building. Building is fun, but the best moments at a real festival happen *during* the show, when something breaks and someone has to decide what to do. So in Venue Simulator a concert is not something you watch. It's something you run.
+I love building games, but I always felt the best part of a festival isn't the building. It's the night itself, when something goes wrong and somebody has to deal with it. So I wanted a game where the concert isn't something you sit and watch. You have to run it.
 
-You start with an empty field, a village road and **$5,000**. You build a stage, a bar, a food stand and a couple of toilets, hook everything up to a generator and plan your first night. Then the gates open.
+You start with an empty field next to a village road and **$5,000**. You put down a stage, a bar, a food stand, a couple of toilets, connect everything to a generator and plan your first night. Then the gates open and you find out everything you forgot.
 
 ![Opening night: a small crowd in front of the pallet stage, with the radio panel showing a fight and a fainting.](/assets/img/concert.jpg)
 
-## What's in the game today
+Honestly, my first version of the concert was boring. People walked in, music played, people walked out. I looked at it and thought "why would anyone play this?" That's when the radio came in, and with it everything going wrong at once.
 
-- **Building:** stages, bars, food stands, toilets, ticket booths, generators and power cables, with three upgrade levels for most buildings.
-- **Events:** book a local act (hard rock, heavy metal or electronic for now), set prices and open the gates.
-- **Staff:** bartenders, cleaners, security and medics. You hire them, give them an area to work in and send them where they're needed.
-- **Live trouble:** fights, fainting, piles of trash, dirty toilets, a bar running dry, short circuits. Each one comes in over the radio and gets worse if you ignore it.
-- **Progress:** every show ends with a report card. Good nights earn reputation stars, stars unlock bigger acts and bigger buildings, and the local bank will lend you money if you're brave.
+## What's in there so far
+
+More than I expected, to be honest:
+
+- **Building:** stages, bars, food stands, toilets, ticket booths, generators and power cables. Most buildings can be upgraded twice.
+- **Events:** you book a local band (hard rock, heavy metal or electronic for now), set ticket and drink prices and open the gates.
+- **Staff:** bartenders, cleaners, security, technicians and medics. You hire them, tell them where to work and send them where they're needed.
+- **Things going wrong:** fights, people fainting, trash everywhere, dirty toilets, the bar running out of beer, short circuits. They come in over the radio and get worse if you ignore them.
+- **Getting better:** every show ends with a report card. Good nights give you reputation stars, stars unlock bigger bands and buildings, and the village bank will lend you money if you're feeling brave.
 
 ![The event report after a hard rock night: ticket and bar income, wages, and a list of incidents.](/assets/img/report.jpg)
 
-## The crowd
+That report card was humbling. The place was full, 50 out of 50, people were reasonably happy, and I still lost $109, mostly because seven staff cost me $530. I laughed, but it's exactly the kind of thing I want the game to be about.
 
-The thing I worried about most was the crowd. A festival has to *feel* full, and a computer usually struggles once you get past a few hundred walking people. The very first thing I built was a stress test: 100,000 visitors walking around at well over 100 frames per second on my laptop. It passed, so the game is built on that foundation.
+## The crowd scared me the most
+
+A festival has to feel full. I was worried the game would choke after a few hundred people walking around, so before anything else I made a test: 100,000 visitors walking around at once. It ran at over 100 frames per second on my laptop. I may have done a small dance. Everything else is built on top of that.
 
 ## What's next
 
-Right now I'm working on electricity and water: proper power networks, water pipes and eventually city connections and backup generators. After that, more variety at the stalls (not every visitor wants the same beer and burger) and visitors with real preferences.
+Right now I'm working on electricity and water: proper power networks, pipes for the toilets, and later city connections and backup generators. After that I want more kinds of stalls (not everybody wants the same beer and burger) and visitors who actually have preferences.
 
-I'll post here whenever something new is playable. If you'd like to follow along, the [RSS feed](/feed.xml) is the easiest way for now, and the Steam page is coming soon.
+I'll post here whenever something new works. There's an [RSS feed](/feed.xml) if you want to follow along, and a Steam page is coming once the game looks a bit less like a prototype.
 
-Thanks for reading.
+Thanks for reading, it means a lot.
 
 — Enes
