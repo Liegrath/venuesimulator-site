@@ -4,7 +4,7 @@ layout: base.njk
 <section class="hero">
   <div class="wrap hero-in">
     <div class="hero-copy">
-      <p class="kicker">Festival &amp; venue management · in development</p>
+      <p class="kicker">A deep festival management sim · in development</p>
       <h1>Start with an empty field and $5,000.</h1>
       <p class="lede">{{ site.tagline }}</p>
       <div class="actions">
@@ -16,6 +16,15 @@ layout: base.njk
       <img src="/assets/img/festival.jpg" width="1600" height="1304" alt="A night-time festival seen from above: thousands of visitors around three stages, rows of lit food stalls and toilets.">
     </figure>
   </div>
+</section>
+
+<section class="facts" aria-label="The game in numbers">
+  <dl class="wrap facts-in">
+    <div><dt>{{ systems.length }}</dt><dd>interlocking systems</dd></div>
+    <div><dt>5</dt><dd>staff roles you command directly</dd></div>
+    <div><dt>11</dt><dd>kinds of live incident</dd></div>
+    <div><dt>100k</dt><dd>visitors the crowd engine handles</dd></div>
+  </dl>
 </section>
 
 <section class="wrap pitch">
@@ -53,6 +62,77 @@ layout: base.njk
       </figure>
     </div>
     <p class="build-note">Early development screenshots. Some labels are still in Turkish; the game ships in English and Turkish.</p>
+  </div>
+</section>
+
+<section class="night">
+  <div class="wrap">
+    <h2 class="section-title">One night at the venue</h2>
+    <p class="section-lede">Building happens on a fast clock, one second for six minutes. When the gates open the clock drops to one second for six seconds, and everything you planned gets tested at walking speed.</p>
+    <ol class="timeline">
+      <li>
+        <span class="tl-time">Days before</span>
+        <h3>Plan</h3>
+        <p>Book an act, pay the fee up front, set ticket, beer and food prices. The planner shows a demand estimate; your stage size caps it.</p>
+      </li>
+      <li>
+        <span class="tl-time">18:00</span>
+        <h3>Gates open</h3>
+        <p>Buses drop visitors at the village stop. The ticket booth queue is the first thing they judge you on.</p>
+      </li>
+      <li>
+        <span class="tl-time">19:30</span>
+        <h3>The rush</h3>
+        <p>Needs climb with the clock. Bars and food stands queue up, stock runs down, generators burn fuel and the power draw creeps toward the limit.</p>
+      </li>
+      <li>
+        <span class="tl-time">20:24</span>
+        <h3>Radio</h3>
+        <p>A fight near the stage and someone fainted at the front, at the same time. You have one security guard and one medic. Trash is piling up behind the bar.</p>
+      </li>
+      <li>
+        <span class="tl-time">22:00</span>
+        <h3>Last song</h3>
+        <p>The crowd heads back to the bus. Staff wages come out of the till.</p>
+      </li>
+      <li>
+        <span class="tl-time">After</span>
+        <h3>Report card</h3>
+        <p>Income line by line, costs, average satisfaction, what people were thinking, every incident and whether you handled it. Then the reputation change.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="systems" id="systems">
+  <div class="wrap">
+    <h2 class="section-title">Under the hood</h2>
+    <p class="section-lede">Venue Simulator is a management game in the old, detailed sense. Every system below is running at the same time, and each one feeds the others: a cheap cable becomes a short circuit, which closes a bar, which grows a queue, which costs you a star, which raises the interest on your loan.</p>
+    <div class="sys-grid">
+      {%- for s in systems %}
+      <article class="sys" id="sys-{{ s.id }}">
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.summary }}</p>
+        <table class="spec">
+          {%- for row in s.specs %}
+          <tr><th scope="row">{{ row[0] }}</th><td>{{ row[1] }}</td></tr>
+          {%- endfor %}
+        </table>
+        <p class="sys-links"><span>Affects</span>
+          {%- for id in s.links %}{% for t in systems %}{% if t.id == id %} <a href="#sys-{{ t.id }}">{{ t.title }}</a>{% endif %}{% endfor %}{% endfor %}
+        </p>
+      </article>
+      {%- endfor %}
+    </div>
+    <div class="roadmap">
+      <h3>In development</h3>
+      <ul>
+        <li><strong>Water:</strong> tanks, pipes and toilets that need them.</li>
+        <li><strong>City connections</strong> for power and water, with backup generators for when the grid fails.</li>
+        <li><strong>More stalls</strong> for different crowds: street food, cocktails, mulled wine, coffee, merch, sponsor tents.</li>
+        <li><strong>Visitor preferences</strong> by genre, season and time of day. Alcohol sells, and it also starts fights.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
