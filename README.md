@@ -69,6 +69,23 @@ draft: true
 
 Yayımlamak istediğinde o satırı sil ve kaydet.
 
+### Otomatik günlük taslaklar
+
+Her gece **23:30**'da Claude (Claude uygulamasındaki "Günlük devlog taslağı" zamanlanmış görevi) o gün oyuna
+eklenenleri (ana sürüme birleştirilen işleri) okur ve **senin ağzından, İngilizce** bir yazı taslağı hazırlar.
+O gün oyunda değişiklik yoksa yazı yazılmaz. Uygulama o saatte kapalıysa görev, uygulama açılınca çalışır.
+
+Taslak `draft: true` ile gelir: depoda durur ama **sitede görünmez**. (Depo herkese açık olduğu için taslak
+github.com'da okunabilir; sitede ise çıkmaz.) Claude uygulamasında bildirim görürsün.
+
+Yayımlamak için iki yol:
+- **Kendin:** depoda `src/blog/posts` → yeni yazıya tıkla → kalem simgesi → `draft: true` satırını sil
+  (istersen metni de düzelt) → **Commit changes...** → **Commit changes**.
+- **Claude'a söyle:** "dünkü devlog taslağını yayınla" ya da "şu cümleyi değiştirip yayınla".
+
+Beğenmediğin taslağı silebilirsin (bölüm 3). Görevi durdurmak ya da saatini değiştirmek için Claude
+uygulamasında soldaki **Scheduled** (Zamanlanmış görevler) listesinden görevi aç.
+
 ## 2. Yazıya resim koyma
 
 1. Önce resmi yükle: depoda **`src`** → **`blog`** → **`images`** klasörüne gir.
