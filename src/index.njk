@@ -27,6 +27,25 @@ layout: base.njk
   </dl>
 </section>
 
+<section class="wrap latest">
+  <div class="latest-head">
+    <h2 class="section-title">Latest from the devlog</h2>
+    <a href="/blog/">All posts →</a>
+  </div>
+  <div class="post-cards">
+    {%- for post in collections.posts | head(2) %}
+    <a class="post-card" href="{{ post.url }}">
+      <img src="{{ post.data.image or '/assets/img/og.jpg' }}" alt="" loading="lazy" width="1600" height="900">
+      <span class="pc-body">
+        <time datetime="{{ post.date | isoDate }}">{{ post.date | niceDate }}{% if loop.first %} · <b>New</b>{% endif %}</time>
+        <span class="pc-title">{{ post.data.title }}</span>
+        {% if post.data.description %}<span class="pc-desc">{{ post.data.description }}</span>{% endif %}
+      </span>
+    </a>
+    {%- endfor %}
+  </div>
+</section>
+
 <section class="wrap pitch">
   <div class="pitch-grid">
     <div>
@@ -134,22 +153,6 @@ layout: base.njk
       </ul>
     </div>
   </div>
-</section>
-
-<section class="wrap latest">
-  <div class="latest-head">
-    <h2 class="section-title">Devlog</h2>
-    <a href="/blog/">All posts →</a>
-  </div>
-  <ul class="post-list">
-    {%- for post in collections.posts | head(3) %}
-    <li>
-      <time datetime="{{ post.date | isoDate }}">{{ post.date | niceDate }}</time>
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
-      {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
-    </li>
-    {%- endfor %}
-  </ul>
 </section>
 
 <section class="wishlist">
