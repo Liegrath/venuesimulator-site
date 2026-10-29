@@ -1,6 +1,10 @@
 {
   "title": "Venue Simulator",
   "tagline": "Build a festival from an empty field. Then keep it running when everything goes wrong.",
+  "homeTitle": "Venue Simulator: a music festival management game for PC",
+  "homeDescription": "Venue Simulator is a music festival management and tycoon game for PC. Build stages, bars and power grids, book bands, command your staff and handle the crowd live. Devlog and Steam page.",
+  "genre": ["Simulation", "Management", "Tycoon"],
+  "platform": "PC (Windows)",
   "url": "https://venuesimulator.com",
   "steamUrl": "",
   "author": "Enes"

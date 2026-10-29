@@ -1,5 +1,6 @@
-{%- set pageTitle = (title + " · " + site.title) if title else (site.title + " — a festival and venue management game") -%}
-{%- set pageDesc = description or site.tagline -%}
+{%- set pageTitle = (title + " · " + site.title) if title else site.homeTitle -%}
+{%- set pageDesc = description or site.homeDescription -%}
+{%- set isPost = layout == "post.njk" -%}
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,14 +11,54 @@
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }} devlog" href="/feed.xml">
-  <meta property="og:type" content="{{ 'article' if layout == 'post.njk' else 'website' }}">
+  <meta property="og:type" content="{{ 'article' if isPost else 'website' }}">
+  <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:title" content="{{ pageTitle }}">
   <meta property="og:description" content="{{ pageDesc }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:image" content="{{ site.url }}{{ image or '/assets/img/og.jpg' }}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preload" href="/assets/fonts/BlueprintSketch.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/assets/fonts/BlueprintSketch.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/site.css">
+  {#- Structured data so search engines know this is a game and a devlog #}
+  {%- if page.url == "/" %}
+  <script type="application/ld+json">
+  {{ {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebSite", "name": site.title, "url": site.url + "/" },
+      {
+        "@type": "VideoGame",
+        "name": site.title,
+        "url": site.url + "/",
+        "description": site.homeDescription,
+        "image": site.url + "/assets/img/og.jpg",
+        "genre": site.genre,
+        "gamePlatform": site.platform,
+        "applicationCategory": "Game",
+        "operatingSystem": "Windows",
+        "author": { "@type": "Person", "name": site.author },
+        "sameAs": [site.steamUrl] if site.steamUrl else []
+      }
+    ]
+  } | dump | safe }}
+  </script>
+  {%- elif isPost %}
+  <script type="application/ld+json">
+  {{ {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": description,
+    "image": site.url + (image or "/assets/img/og.jpg"),
+    "datePublished": page.date | isoDate,
+    "author": { "@type": "Person", "name": site.author },
+    "publisher": { "@type": "Organization", "name": site.title, "logo": { "@type": "ImageObject", "url": site.url + "/favicon.png" } },
+    "mainEntityOfPage": site.url + page.url,
+    "about": { "@type": "VideoGame", "name": site.title, "url": site.url + "/" }
+  } | dump | safe }}
+  </script>
+  {%- endif %}
 </head>
 <body>
   <header class="top">

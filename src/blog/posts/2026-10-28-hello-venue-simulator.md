@@ -1,6 +1,6 @@
 ---
 title: Hello, Venue Simulator
-description: My first game, what it's about, and why I'm writing about it here.
+description: Why I'm making Venue Simulator, my first game, a music festival management sim where you build the site and run the show live.
 image: /assets/img/festival.jpg
 ---
 

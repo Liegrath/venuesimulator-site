@@ -1,12 +1,12 @@
 /* Venue Simulator site. Colours follow the game's light UI (game/src/UI/UiTheme.cs, Pal). */
 @font-face {
   font-family: "Blueprint Sketch";
-  src: url("/assets/fonts/BlueprintSketch.otf") format("opentype");
+  src: url("/assets/fonts/BlueprintSketch.woff2") format("woff2"), url("/assets/fonts/BlueprintSketch.otf") format("opentype");
   font-display: swap;
 }
 @font-face {
   font-family: "Blueprint Sketch Solid";
-  src: url("/assets/fonts/BlueprintSketch-Solid.otf") format("opentype");
+  src: url("/assets/fonts/BlueprintSketch-Solid.woff2") format("woff2"), url("/assets/fonts/BlueprintSketch-Solid.otf") format("opentype");
   font-display: swap;
 }
 

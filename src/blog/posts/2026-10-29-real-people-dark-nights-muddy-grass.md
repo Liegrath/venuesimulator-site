@@ -1,6 +1,6 @@
 ---
 title: Real people, dark nights and muddy grass
-description: A day and a half of changes, from 3D visitors who dance to grass that turns to dirt under their feet.
+description: A day and a half of changes in my festival management game, from 3D visitors who dance to grass that turns to dirt under their feet.
 image: /blog/images/2026-10-29-crowd.jpg
 draft: true
 ---

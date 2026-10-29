@@ -14,6 +14,7 @@ export default function (config) {
   config.addFilter("niceDate", (d) =>
     new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }));
   config.addFilter("isoDate", (d) => new Date(d).toISOString());
+  config.addFilter("isoDay", (d) => new Date(d).toISOString().slice(0, 10));
   config.addFilter("rfcDate", (d) => new Date(d).toUTCString());
   config.addFilter("head", (arr, n) => arr.slice(0, n));
 
